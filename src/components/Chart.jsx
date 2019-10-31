@@ -14,7 +14,7 @@ const Chart = ({ sparklineData }) => {
     .map((price, idx) => {
       if (idx % 6 === 0) {
         const timeToSubtract = 168 - idx;
-        const date = moment()
+        const date = moment() 
           .subtract(timeToSubtract, "hours")
           .format("ddd h:mma");
         return { value: price, date };
@@ -30,7 +30,7 @@ const Chart = ({ sparklineData }) => {
     <LineChart width={1100} height={300} data={formattedData}>
       <Line type="monotone" dataKey="value" stroke="#8884d8" />
       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-      <XAxis dataKey="date" interval={3} />
+      <XAxis dataKey="date" interval={6} />
       <YAxis />
       <Tooltip />
     </LineChart>
